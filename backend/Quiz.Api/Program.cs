@@ -20,14 +20,26 @@ using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var jwtKey = builder.Configuration["Jwt:Key"] ?? string.Empty;
+// *********************************************************************************
+// # Windows (CMD) set JWT_SECRET_KEY=your-secure-random-key-at-least-32-characters
+// *********************************************************************************
+
+var jwtKeyFromEnv = Environment.GetEnvironmentVariable("JWT_SECRET_KEY");
+var jwtKeyFromConfig = builder.Configuration["Jwt:Key"] ?? string.Empty;
+
+var jwtKey = !string.IsNullOrEmpty(jwtKeyFromEnv) 
+    ? jwtKeyFromEnv 
+    : (builder.Environment.IsDevelopment() ? jwtKeyFromConfig : string.Empty);
+
 var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "Quiz.Api";
 var jwtAudience = builder.Configuration["Jwt:Audience"] ?? "Quiz.Frontend";
 var jwtExpireMinutes = int.TryParse(builder.Configuration["Jwt:ExpireMinutes"], out var minutes) ? minutes : 60;
 
 if (jwtKey.Length < 32)
 {
-    throw new InvalidOperationException("Jwt:Key must be at least 32 characters. Please update appsettings or environment variable.");
+    throw new InvalidOperationException(
+        "JWT_SECRET_KEY environment variable must be at least 32 characters. " +
+        "Set via: export JWT_SECRET_KEY=\"your-secure-random-key-at-least-32-chars\"");
 }
 
 var signingKey = AuthSecurity.CreateSigningKey(jwtKey);
@@ -78,9 +90,15 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddCors(options =>
 {
+   
+    var allowedOrigins = Environment.GetEnvironmentVariable("CORS_ALLOWED_ORIGINS");
+    var origins = !string.IsNullOrEmpty(allowedOrigins)
+        ? allowedOrigins.Split(',', StringSplitOptions.RemoveEmptyEntries)
+        : new[] { "http://localhost:5173", "http://127.0.0.1:5173" };
+
     options.AddPolicy("frontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "http://127.0.0.1:5173")
+        policy.WithOrigins(origins)
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -188,11 +206,66 @@ app.UseHttpLogging();
 app.UseCors("frontend");
 app.UseRateLimiter();
 
+// Security: CSRF Protection via Origin header validation
+// For state-changing requests, validate that Origin matches allowed origins
+app.Use(async (context, next) =>
+{
+    var method = context.Request.Method;
+    var isStateChanging = method is "POST" or "PUT" or "DELETE" or "PATCH";
+    
+    if (isStateChanging)
+    {
+        var origin = context.Request.Headers.Origin.FirstOrDefault();
+        var referer = context.Request.Headers.Referer.FirstOrDefault();
+        
+        // Get allowed origins (same as CORS config)
+        var allowedOriginsEnv = Environment.GetEnvironmentVariable("CORS_ALLOWED_ORIGINS");
+        var allowedOrigins = !string.IsNullOrEmpty(allowedOriginsEnv)
+            ? allowedOriginsEnv.Split(',', StringSplitOptions.RemoveEmptyEntries)
+            : new[] { "http://localhost:5173", "http://127.0.0.1:5173" };
+        
+        // Check if Origin header is present and valid
+        if (!string.IsNullOrEmpty(origin))
+        {
+            if (!allowedOrigins.Any(allowed => origin.Equals(allowed, StringComparison.OrdinalIgnoreCase)))
+            {
+                context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                await context.Response.WriteAsJsonAsync(new { message = "CSRF validation failed: Invalid origin" });
+                return;
+            }
+        }
+        // If no Origin but has Referer, check Referer
+        else if (!string.IsNullOrEmpty(referer))
+        {
+            var refererHost = new Uri(referer).GetLeftPart(UriPartial.Authority);
+            if (!allowedOrigins.Any(allowed => refererHost.Equals(allowed, StringComparison.OrdinalIgnoreCase)))
+            {
+                context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                await context.Response.WriteAsJsonAsync(new { message = "CSRF validation failed: Invalid referer" });
+                return;
+            }
+        }
+        // If neither Origin nor Referer, it could be a non-browser request (API client) - allow if has Authorization header
+        else if (string.IsNullOrEmpty(context.Request.Headers.Authorization.FirstOrDefault()))
+        {
+            // No Origin, no Referer, no Auth header = likely CSRF attempt
+            context.Response.StatusCode = StatusCodes.Status403Forbidden;
+            await context.Response.WriteAsJsonAsync(new { message = "CSRF validation failed: Missing origin" });
+            return;
+        }
+    }
+    
+    await next();
+});
+
 app.Use(async (context, next) =>
 {
     context.Response.Headers.TryAdd("X-Content-Type-Options", "nosniff");
     context.Response.Headers.TryAdd("X-Frame-Options", "DENY");
     context.Response.Headers.TryAdd("Referrer-Policy", "no-referrer");
+    // Security: Content-Security-Policy to mitigate XSS attacks
+    context.Response.Headers.TryAdd("Content-Security-Policy", 
+        "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'");
     await next();
 });
 

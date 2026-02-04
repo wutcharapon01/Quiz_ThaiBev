@@ -60,6 +60,24 @@ public static class It04Api
                 return Results.BadRequest(new { message = "กรุณากรอกข้อมูลให้ครบทุกช่อง" });
             }
 
+            // Security: Input length limits to prevent DoS
+            if (firstName.Length > 100 || lastName.Length > 100)
+            {
+                return Results.BadRequest(new { message = "ชื่อไม่สามารถยาวเกิน 100 ตัวอักษร" });
+            }
+
+            if (email.Length > 255)
+            {
+                return Results.BadRequest(new { message = "อีเมลไม่สามารถยาวเกิน 255 ตัวอักษร" });
+            }
+
+            // Security: Base64 image size limit (2MB = ~2.7MB base64)
+            const int MaxBase64Size = 2_800_000;
+            if (profileBase64.Length > MaxBase64Size)
+            {
+                return Results.BadRequest(new { message = "รูปภาพต้องมีขนาดไม่เกิน 2MB" });
+            }
+
             if (!Occupations.Contains(occupation))
             {
                 return Results.BadRequest(new { message = "อาชีพไม่ถูกต้อง" });

@@ -53,10 +53,22 @@ public static class It01Api
         {
             var firstName = request.FirstName?.Trim() ?? string.Empty;
             var lastName = request.LastName?.Trim() ?? string.Empty;
+            var remark = request.Remark?.Trim();
 
             if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
             {
                 return Results.BadRequest(new { message = "First name and last name are required" });
+            }
+
+            // Security: Input length limits to prevent DoS
+            if (firstName.Length > 100 || lastName.Length > 100)
+            {
+                return Results.BadRequest(new { message = "Name cannot exceed 100 characters" });
+            }
+
+            if (remark?.Length > 500)
+            {
+                return Results.BadRequest(new { message = "Remark cannot exceed 500 characters" });
             }
 
             var today = DateOnly.FromDateTime(DateTime.UtcNow);
