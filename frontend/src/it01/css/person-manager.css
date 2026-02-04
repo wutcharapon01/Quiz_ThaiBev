@@ -1,0 +1,251 @@
+﻿.page-wrap {
+  width: min(1100px, 94vw);
+  margin: 2rem auto;
+  background: #ffffff;
+  border: 1px solid #d9e4f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(9, 30, 66, 0.14);
+}
+
+.panel-header {
+  background: linear-gradient(120deg, #16a34a, #10b981);
+  color: #fff;
+  padding: 0.95rem 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.panel-body {
+  padding: 1.15rem;
+  background: linear-gradient(180deg, #fbfdff 0%, #f4f8fc 100%);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1976d2, #1d4ed8);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(29, 78, 216, 0.28);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.24);
+}
+
+.btn-neutral {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.btn-link {
+  background: linear-gradient(135deg, #2f67b7, #1d4ed8);
+  color: #fff;
+  padding: 0.35rem 0.7rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid #c6d8ea;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.people-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.people-table th,
+.people-table td {
+  border: 1px solid #d7e3f1;
+  padding: 0.55rem 0.45rem;
+  font-size: 0.86rem;
+  text-align: center;
+}
+
+.people-table th {
+  background: linear-gradient(135deg, #1da2e2, #1c8cd8);
+  color: #fff;
+  font-weight: 700;
+}
+
+.people-table tbody tr:nth-child(even) {
+  background: #f8fbff;
+}
+
+.people-table tbody tr:hover {
+  background: #edf5ff;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  backdrop-filter: blur(2px);
+}
+
+.modal-box {
+  width: min(620px, 96vw);
+  background: #fff;
+  border: 1px solid #bdd0e6;
+  border-radius: 14px;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.3);
+  overflow: hidden;
+  animation: modalFadeIn 0.18s ease;
+}
+
+.modal-title {
+  background: linear-gradient(120deg, #16a34a, #0ea5a4);
+  color: #fff;
+  padding: 0.6rem 0.9rem;
+  font-weight: 700;
+}
+
+.modal-body {
+  padding: 1.05rem;
+  overflow-x: hidden;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 95px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.form-grid > * {
+  min-width: 0;
+}
+
+.form-grid label {
+  font-size: 0.9rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.form-grid input,
+.form-grid textarea {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #bfd1e4;
+  border-radius: 8px;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.16);
+  outline: none;
+}
+
+.form-grid .span-2 {
+  grid-column: span 2;
+}
+
+.form-grid textarea {
+  resize: vertical;
+  min-height: 86px;
+}
+
+.form-grid .dp__main {
+  width: 100%;
+}
+
+.form-grid .dp__input {
+  width: 100%;
+  border: 1px solid #bfd1e4;
+  border-radius: 8px;
+  padding: 0.45rem 2.1rem 0.45rem 0.55rem;
+  font-size: 0.9rem;
+}
+
+.form-grid .dp__input_icon {
+  display: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.error-text {
+  color: #d90429;
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 700px) {
+  .page-wrap {
+    margin: 1rem auto;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid .span-2 {
+    grid-column: span 1;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    text-align: center;
+  }
+}

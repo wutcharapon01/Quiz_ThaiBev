@@ -1,0 +1,79 @@
+﻿.it05-page {
+  width: min(820px, 94vw);
+  margin: 1.6rem auto;
+  background: #fff;
+  border: 1px solid #d1ddea;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+.it05-header {
+  background: linear-gradient(120deg, #16a34a, #10b981);
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  padding: 0.65rem;
+}
+
+.it05-body {
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.ticket-btn,
+.action-btn,
+.secondary-btn {
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ticket-btn {
+  width: min(360px, 90%);
+  min-height: 120px;
+  font-size: clamp(1.8rem, 4.8vw, 2.8rem);
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #fff;
+}
+
+.action-btn {
+  margin-top: 1rem;
+  background: #1d4ed8;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+}
+
+.secondary-btn {
+  margin-top: 0.75rem;
+  background: #e2e8f0;
+  color: #0f172a;
+  padding: 0.5rem 1rem;
+}
+
+.queue-no {
+  margin: 0.45rem 0;
+  font-size: clamp(3rem, 12vw, 5rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.muted {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.error {
+  margin-top: 0.8rem;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.link-back {
+  display: inline-block;
+  margin-top: 0.9rem;
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: 600;
+}

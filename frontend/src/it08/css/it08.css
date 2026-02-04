@@ -1,0 +1,98 @@
+﻿.it08-page {
+  width: min(900px, 94vw);
+  margin: 1.5rem auto;
+  background: #fff;
+  border: 1px solid #d1ddeb;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
+}
+
+.it08-head {
+  background: linear-gradient(120deg, #16a34a, #10b981);
+  color: #fff;
+  text-align: center;
+  padding: 0.65rem;
+  font-weight: 700;
+}
+
+.it08-body {
+  padding: 1rem;
+}
+
+.it08-toolbar {
+  display: flex;
+  gap: 0.55rem;
+  margin-bottom: 0.8rem;
+}
+
+.btn08 {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn08.add { background: #65a30d; color: #fff; }
+.btn08.back { background: #e2e8f0; color: #0f172a; }
+.btn08.del { background: #ef4444; color: #fff; }
+.btn08.save { background: #2563eb; color: #fff; }
+
+.q-item {
+  margin-bottom: 1rem;
+}
+
+.q-title {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.choice-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.feedback08 {
+  margin-top: 0.7rem;
+  font-weight: 600;
+}
+
+.feedback08.error { color: #dc2626; }
+.feedback08.success { color: #15803d; }
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.modal08 {
+  width: min(620px, 96vw);
+  background: #fff;
+  border: 1px solid #bfd2e6;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.form08 {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.form08 input {
+  border: 1px solid #bcd0e3;
+  border-radius: 8px;
+  padding: 0.48rem 0.6rem;
+}
+
+.modal-actions08 {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}

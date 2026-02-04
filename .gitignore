@@ -1,0 +1,22 @@
+﻿# Node
+node_modules/
+frontend/node_modules/
+
+# Frontend build
+frontend/dist/
+
+# .NET build
+**/bin/
+**/obj/
+backend/Quiz.Api/build_tmp/
+
+# Local DB / logs
+*.db
+*.db-shm
+*.db-wal
+*.log
+
+# IDE
+.vscode/
+.vs/
+.idea/

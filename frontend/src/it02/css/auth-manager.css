@@ -1,0 +1,125 @@
+﻿.auth-page {
+  width: min(1100px, 94vw);
+  margin: 1.8rem auto;
+}
+
+.auth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 1rem;
+}
+
+.auth-card,
+.welcome-card {
+  background: #fff;
+  border: 1px solid #dbe5f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(2, 42, 84, 0.08);
+}
+
+.card-head {
+  background: linear-gradient(120deg, #16a34a, #10b981);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.field {
+  margin-bottom: 0.8rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.field input {
+  width: 100%;
+  border: 1px solid #c8d6e5;
+  border-radius: 10px;
+  padding: 0.5rem 0.65rem;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.16);
+}
+
+.actions {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.auth-btn,
+.auth-link-btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.48rem 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.auth-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+}
+
+.auth-link-btn {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.auth-error {
+  margin-top: 0.65rem;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.success-text {
+  margin-top: 0.65rem;
+  color: #15803d;
+  font-weight: 600;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.modal-box {
+  width: min(640px, 96vw);
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #bfd5ec;
+}
+
+.welcome-card {
+  margin-top: 1rem;
+}
+
+.token-box {
+  margin-top: 0.8rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px dashed #94a3b8;
+  color: #334155;
+  font-size: 0.86rem;
+  word-break: break-all;
+}

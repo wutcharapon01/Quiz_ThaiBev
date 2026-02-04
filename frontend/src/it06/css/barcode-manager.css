@@ -1,0 +1,137 @@
+﻿.it06-page {
+  width: min(900px, 94vw);
+  margin: 1.5rem auto;
+  background: #fff;
+  border: 1px solid #cfdceb;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+.it06-header {
+  background: linear-gradient(120deg, #16a34a, #10b981);
+  color: #fff;
+  text-align: center;
+  padding: 0.65rem;
+  font-weight: 700;
+}
+
+.it06-body {
+  padding: 1rem;
+}
+
+.it06-toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.it06-input {
+  border: 1px solid #bcd0e3;
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  font-family: Consolas, monospace;
+  text-transform: uppercase;
+}
+
+.it06-btn {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.48rem 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.it06-btn.add {
+  background: #2563eb;
+  color: #fff;
+}
+
+.it06-btn.back {
+  background: #e2e8f0;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.it06-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #c8d8ea;
+  border-radius: 10px;
+}
+
+.it06-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.it06-table th,
+.it06-table td {
+  border: 1px solid #d8e4f1;
+  padding: 0.42rem;
+  text-align: center;
+}
+
+.it06-table th {
+  background: #1c8cd8;
+  color: #fff;
+}
+
+.barcode-svg {
+  width: 190px;
+  height: 38px;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: #fff;
+  border: 0;
+  border-radius: 7px;
+  padding: 0.32rem 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.feedback {
+  margin-top: 0.7rem;
+  font-weight: 600;
+}
+
+.feedback.error {
+  color: #dc2626;
+}
+
+.feedback.success {
+  color: #15803d;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.modal-box {
+  width: min(520px, 95vw);
+  background: #fff;
+  border: 1px solid #bcd0e3;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.modal-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .it06-toolbar {
+    grid-template-columns: 1fr;
+  }
+}

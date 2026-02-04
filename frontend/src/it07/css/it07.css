@@ -1,0 +1,143 @@
+﻿.it07-page {
+  width: min(920px, 94vw);
+  margin: 1.5rem auto;
+  background: #fff;
+  border: 1px solid #d0dceb;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
+}
+
+.it07-head {
+  background: linear-gradient(120deg, #16a34a, #10b981);
+  color: #fff;
+  text-align: center;
+  padding: 0.65rem;
+  font-weight: 700;
+}
+
+.it07-body {
+  padding: 1rem;
+}
+
+.it07-toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.it07-input {
+  border: 1px solid #bcd0e3;
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  font-family: Consolas, monospace;
+  text-transform: uppercase;
+}
+
+.btn-07 {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-07.add {
+  background: #2563eb;
+  color: #fff;
+}
+
+.btn-07.back {
+  background: #e2e8f0;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.btn-07.qr {
+  background: #22c55e;
+  color: #fff;
+}
+
+.btn-07.del {
+  background: #ef4444;
+  color: #fff;
+}
+
+.it07-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #c8d8ea;
+  border-radius: 10px;
+}
+
+.it07-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.it07-table th,
+.it07-table td {
+  border: 1px solid #d8e4f1;
+  text-align: center;
+  padding: 0.4rem;
+}
+
+.it07-table th {
+  background: #1c8cd8;
+  color: #fff;
+}
+
+.feedback-07 {
+  margin-top: 0.7rem;
+  font-weight: 600;
+}
+
+.feedback-07.error {
+  color: #dc2626;
+}
+
+.feedback-07.success {
+  color: #15803d;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.modal-07 {
+  width: min(520px, 95vw);
+  background: #fff;
+  border: 1px solid #bfd2e6;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.qr-image {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin: 0.6rem auto;
+  display: block;
+}
+
+.modal-actions-07 {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+}
+
+@media (max-width: 700px) {
+  .it07-toolbar {
+    grid-template-columns: 1fr;
+  }
+}

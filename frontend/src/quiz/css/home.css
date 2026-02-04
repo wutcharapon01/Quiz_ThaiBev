@@ -1,0 +1,38 @@
+﻿.hero-block h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+}
+
+.hero-block p {
+  margin: 0.6rem 0 1.5rem;
+  color: #2f4a67;
+}
+
+.question-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.question-card {
+  background: #ffffffde;
+  border: 1px solid #dbe8f7;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 10px 24px #102c4b12;
+}
+
+.question-card h2 {
+  margin-top: 0.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.question-card p {
+  color: #325170;
+}
+
+.question-number {
+  margin: 0;
+  color: #1273de;
+  font-weight: 700;
+}

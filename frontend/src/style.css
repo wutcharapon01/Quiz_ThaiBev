@@ -1,0 +1,15 @@
+﻿:root {
+  color: #12202f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.dp__menu {
+  z-index: 5000 !important;
+}
