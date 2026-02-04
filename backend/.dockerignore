@@ -1,0 +1,30 @@
+# .NET build artifacts
+bin/
+obj/
+out/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Test results
+TestResults/
+
+# SQLite database (will be created at runtime)
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Secrets (should use environment variables)
+appsettings.Development.json

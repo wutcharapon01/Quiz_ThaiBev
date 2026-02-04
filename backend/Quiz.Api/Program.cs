@@ -272,6 +272,10 @@ app.Use(async (context, next) =>
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Health check endpoint for Docker/Render
+app.MapGet("/health", () => Results.Ok(new { status = "healthy", timestamp = DateTime.UtcNow }))
+    .ExcludeFromDescription();
+
 var api = app.MapGroup("/api").RequireRateLimiting("api");
 
 It01Api.MapEndpoints(api);
