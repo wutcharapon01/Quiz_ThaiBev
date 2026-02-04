@@ -274,7 +274,7 @@ function formatDateToIso(date) {
         </div>
       </div>
 
-      <p class="it04-hint">ระบบจะบันทึกรูปโปรไฟล์เป็นข้อมูล Base64</p>
+      <p class="it04-hint"></p>
 
       <div class="it04-actions">
         <button class="it04-btn save" type="button" :disabled="busy" @click="submitForm">Save</button>

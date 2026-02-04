@@ -2,7 +2,7 @@
   {
     id: 1,
     title: 'Question 1 (IT-01)',
-    description: 'Add/View modal with SQLite API',
+    description: 'Add/View modal',
     prompt: 'This question uses a custom screen from IT-01 requirement.',
     choices: ['Open screen from dashboard']
   },
