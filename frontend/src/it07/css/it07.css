@@ -1,16 +1,16 @@
 ﻿.it07-page {
   width: min(920px, 94vw);
   margin: 1.5rem auto;
-  background: #fff;
-  border: 1px solid #d0dceb;
+  background: var(--color-bg-card, #fff);
+  border: 1px solid var(--color-border, #d0dceb);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
+  box-shadow: var(--shadow-panel, 0 12px 26px rgba(15, 23, 42, 0.12));
 }
 
 .it07-head {
-  background: linear-gradient(120deg, #16a34a, #10b981);
-  color: #fff;
+  background: var(--gradient-success, linear-gradient(120deg, #16a34a, #10b981));
+  color: var(--color-bg-card, #fff);
   text-align: center;
   padding: 0.65rem;
   font-weight: 700;
@@ -44,8 +44,8 @@
 }
 
 .btn-07.add {
-  background: #2563eb;
-  color: #fff;
+  background: var(--color-primary-light, #2563eb);
+  color: var(--color-bg-card, #fff);
 }
 
 .btn-07.back {
@@ -55,13 +55,13 @@
 }
 
 .btn-07.qr {
-  background: #22c55e;
-  color: #fff;
+  background: var(--color-success, #22c55e);
+  color: var(--color-bg-card, #fff);
 }
 
 .btn-07.del {
-  background: #ef4444;
-  color: #fff;
+  background: var(--color-error, #ef4444);
+  color: var(--color-bg-card, #fff);
 }
 
 .it07-table-wrap {
@@ -94,11 +94,11 @@
 }
 
 .feedback-07.error {
-  color: #dc2626;
+  color: var(--color-error, #dc2626);
 }
 
 .feedback-07.success {
-  color: #15803d;
+  color: var(--color-success-dark, #15803d);
 }
 
 .modal-backdrop {
@@ -112,8 +112,8 @@
 
 .modal-07 {
   width: min(520px, 95vw);
-  background: #fff;
-  border: 1px solid #bfd2e6;
+  background: var(--color-bg-card, #fff);
+  border: 1px solid var(--color-border-dark, #bfd2e6);
   border-radius: 12px;
   padding: 1rem;
   text-align: center;

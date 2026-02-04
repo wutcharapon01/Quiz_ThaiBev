@@ -1,7 +1,7 @@
 ﻿:root {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #12202f;
-  background: radial-gradient(circle at 10% 20%, #f0f7ff, #f8fbff 55%, #edf5ff);
+  color: var(--color-text, #12202f);
+  background: var(--gradient-bg, radial-gradient(circle at 10% 20%, #f0f7ff, #f8fbff 55%, #edf5ff));
 }
 
 * {
@@ -29,12 +29,12 @@ body {
 }
 
 .primary-btn {
-  background: #1273de;
-  color: #fff;
+  background: var(--color-primary, #1273de);
+  color: var(--color-bg-card, #fff);
 }
 
 .ghost-btn {
-  background: #fff;
-  border-color: #c6d7eb;
-  color: #1f3c59;
+  background: var(--color-bg-card, #fff);
+  border-color: var(--color-border-light, #c6d7eb);
+  color: var(--color-text-secondary, #1f3c59);
 }

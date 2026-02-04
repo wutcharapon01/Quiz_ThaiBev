@@ -11,16 +11,16 @@
 
 .auth-card,
 .welcome-card {
-  background: #fff;
-  border: 1px solid #dbe5f0;
+  background: var(--color-bg-card, #fff);
+  border: 1px solid var(--color-border, #dbe5f0);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 14px 30px rgba(2, 42, 84, 0.08);
+  box-shadow: var(--shadow-card, 0 14px 30px rgba(2, 42, 84, 0.08));
 }
 
 .card-head {
-  background: linear-gradient(120deg, #16a34a, #10b981);
-  color: #fff;
+  background: var(--gradient-success, linear-gradient(120deg, #16a34a, #10b981));
+  color: var(--color-bg-card, #fff);
   padding: 0.75rem 1rem;
   font-weight: 700;
 }
@@ -71,8 +71,8 @@
 }
 
 .auth-btn {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: #fff;
+  background: linear-gradient(135deg, var(--color-primary-light, #2563eb), var(--color-primary-dark, #1d4ed8));
+  color: var(--color-bg-card, #fff);
 }
 
 .auth-link-btn {
@@ -82,13 +82,13 @@
 
 .auth-error {
   margin-top: 0.65rem;
-  color: #dc2626;
+  color: var(--color-error, #dc2626);
   font-weight: 600;
 }
 
 .success-text {
   margin-top: 0.65rem;
-  color: #15803d;
+  color: var(--color-success-dark, #15803d);
   font-weight: 600;
 }
 
@@ -103,10 +103,10 @@
 
 .modal-box {
   width: min(640px, 96vw);
-  background: #fff;
+  background: var(--color-bg-card, #fff);
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid #bfd5ec;
+  border: 1px solid var(--color-border-dark, #bfd5ec);
 }
 
 .welcome-card {

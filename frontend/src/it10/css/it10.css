@@ -1,16 +1,16 @@
 ﻿.it10-page {
   width: min(920px, 94vw);
   margin: 1.5rem auto;
-  background: #fff;
-  border: 1px solid #c8d8ea;
+  background: var(--color-bg-card, #fff);
+  border: 1px solid var(--color-border, #c8d8ea);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+  box-shadow: var(--shadow-card, 0 12px 24px rgba(15, 23, 42, 0.12));
 }
 
 .it10-head {
-  background: linear-gradient(120deg, #16a34a, #0ea5a4);
-  color: #fff;
+  background: var(--gradient-success, linear-gradient(120deg, #16a34a, #0ea5a4));
+  color: var(--color-bg-card, #fff);
   text-align: center;
   padding: 0.7rem;
   font-weight: 700;
@@ -39,11 +39,11 @@
 }
 
 .it10-card {
-  border: 1px solid #d8e6f3;
+  border: 1px solid var(--color-border, #d8e6f3);
   border-radius: 12px;
   padding: 0.8rem;
   margin-bottom: 0.75rem;
-  background: #f9fbff;
+  background: var(--color-bg, #f9fbff);
 }
 
 .it10-question {
@@ -79,9 +79,20 @@
   padding: 0.5rem 0.9rem;
 }
 
-.btn10.submit { background: #2563eb; color: #fff; }
-.btn10.retry { background: #0ea5a4; color: #fff; }
-.btn10.home { background: #e2e8f0; color: #0f172a; }
+.btn10.submit {
+  background: var(--color-primary-light, #2563eb);
+  color: var(--color-bg-card, #fff);
+}
+
+.btn10.retry {
+  background: var(--color-accent, #0ea5a4);
+  color: var(--color-bg-card, #fff);
+}
+
+.btn10.home {
+  background: #e2e8f0;
+  color: #0f172a;
+}
 
 .btn10:disabled {
   opacity: 0.7;
@@ -93,19 +104,24 @@
   font-weight: 600;
 }
 
-.it10-feedback.error { color: #dc2626; }
-.it10-feedback.success { color: #15803d; }
+.it10-feedback.error {
+  color: var(--color-error, #dc2626);
+}
+
+.it10-feedback.success {
+  color: var(--color-success-dark, #15803d);
+}
 
 .it10-result {
-  border: 1px solid #bbd5f0;
+  border: 1px solid var(--color-border-dark, #bbd5f0);
   border-radius: 12px;
-  background: #f8fbff;
+  background: var(--color-bg, #f8fbff);
   padding: 1rem;
 }
 
 .it10-result h3 {
   margin: 0 0 0.6rem;
-  color: #1d4ed8;
+  color: var(--color-primary-dark, #1d4ed8);
 }
 
 .it10-result p {

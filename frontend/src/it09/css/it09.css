@@ -1,16 +1,16 @@
 ﻿.it09-page {
   width: min(840px, 94vw);
   margin: 1.5rem auto;
-  background: #fff;
-  border: 1px solid #d2deeb;
+  background: var(--color-bg-card, #fff);
+  border: 1px solid var(--color-border, #d2deeb);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.1);
+  box-shadow: var(--shadow-card, 0 12px 24px rgba(15, 23, 42, 0.1));
 }
 
 .it09-head {
-  background: linear-gradient(120deg, #16a34a, #10b981);
-  color: #fff;
+  background: var(--gradient-success, linear-gradient(120deg, #16a34a, #10b981));
+  color: var(--color-bg-card, #fff);
   text-align: center;
   font-weight: 700;
   padding: 0.65rem;
@@ -30,8 +30,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #3b82f6;
-  color: #fff;
+  background: var(--color-primary-light, #3b82f6);
+  color: var(--color-bg-card, #fff);
   font-weight: 700;
   display: grid;
   place-items: center;
@@ -40,7 +40,7 @@
 
 .post-meta09 {
   font-size: 0.8rem;
-  color: #64748b;
+  color: var(--color-text-muted, #64748b);
 }
 
 .post-image09 {
@@ -63,7 +63,7 @@
 .helper09 {
   margin-left: 44px;
   margin-top: 0.35rem;
-  color: #64748b;
+  color: var(--color-text-muted, #64748b);
   font-size: 0.8rem;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .error09 {
-  color: #dc2626;
+  color: var(--color-error, #dc2626);
   margin-left: 44px;
   margin-top: 0.5rem;
   font-weight: 600;
@@ -82,7 +82,7 @@
   display: inline-block;
   margin-left: 44px;
   margin-top: 0.8rem;
-  color: #1d4ed8;
+  color: var(--color-primary-dark, #1d4ed8);
   text-decoration: none;
   font-weight: 600;
 }
@@ -92,8 +92,8 @@
   margin-top: 0.3rem;
   border: 0;
   border-radius: 8px;
-  background: #2563eb;
-  color: #fff;
+  background: var(--color-primary-light, #2563eb);
+  color: var(--color-bg-card, #fff);
   padding: 0.45rem 0.85rem;
   font-weight: 700;
   cursor: pointer;

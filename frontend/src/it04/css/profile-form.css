@@ -1,16 +1,16 @@
 ﻿.it04-page {
   width: min(980px, 94vw);
   margin: 1.5rem auto;
-  background: #fff;
-  border: 1px solid #cdd9e6;
+  background: var(--color-bg-card, #fff);
+  border: 1px solid var(--color-border, #cdd9e6);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
+  box-shadow: var(--shadow-card, 0 10px 24px rgba(15, 23, 42, 0.1));
 }
 
 .it04-header {
-  background: linear-gradient(120deg, #16a34a, #10b981);
-  color: #fff;
+  background: var(--gradient-success, linear-gradient(120deg, #16a34a, #10b981));
+  color: var(--color-bg-card, #fff);
   padding: 0.7rem 1rem;
   font-size: 1.2rem;
   font-weight: 700;
@@ -96,13 +96,13 @@
 }
 
 .it04-btn.save {
-  background: #65a30d;
-  color: #fff;
+  background: var(--color-success, #65a30d);
+  color: var(--color-bg-card, #fff);
 }
 
 .it04-btn.clear {
-  background: #94a3b8;
-  color: #fff;
+  background: var(--color-text-muted, #94a3b8);
+  color: var(--color-bg-card, #fff);
 }
 
 .it04-btn.back {
@@ -112,7 +112,7 @@
 }
 
 .it04-error {
-  color: #dc2626;
+  color: var(--color-error, #dc2626);
   font-size: 0.82rem;
   font-weight: 600;
 }
@@ -122,13 +122,13 @@
   padding: 0.55rem 0.75rem;
   border-radius: 8px;
   background: #dcfce7;
-  color: #166534;
+  color: var(--color-success-dark, #166534);
   font-weight: 700;
 }
 
 .it04-hint {
   margin-top: 0.35rem;
-  color: #64748b;
+  color: var(--color-text-muted, #64748b);
   font-size: 0.8rem;
 }
 

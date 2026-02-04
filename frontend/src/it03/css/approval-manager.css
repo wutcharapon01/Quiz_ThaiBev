@@ -1,16 +1,16 @@
 ﻿.it03-page {
   width: min(1050px, 94vw);
   margin: 1.5rem auto;
-  background: #fff;
-  border: 1px solid #cdd9e6;
+  background: var(--color-bg-card, #fff);
+  border: 1px solid var(--color-border, #cdd9e6);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+  box-shadow: var(--shadow-panel, 0 12px 28px rgba(15, 23, 42, 0.12));
 }
 
 .it03-header {
-  background: linear-gradient(120deg, #16a34a, #10b981);
-  color: #fff;
+  background: var(--gradient-success, linear-gradient(120deg, #16a34a, #10b981));
+  color: var(--color-bg-card, #fff);
   padding: 0.75rem 1rem;
   font-size: 1.2rem;
   font-weight: 700;
@@ -58,13 +58,13 @@
 }
 
 .btn-approve {
-  background: #1d4ed8;
-  color: #fff;
+  background: var(--color-primary-dark, #1d4ed8);
+  color: var(--color-bg-card, #fff);
 }
 
 .btn-reject {
-  background: #ef4444;
-  color: #fff;
+  background: var(--color-error, #ef4444);
+  color: var(--color-bg-card, #fff);
 }
 
 .btn-neutral {
@@ -133,7 +133,7 @@
 
 .feedback-text {
   margin-top: 0.65rem;
-  color: #dc2626;
+  color: var(--color-error, #dc2626);
   font-weight: 600;
 }
 
@@ -148,15 +148,15 @@
 
 .modal-box {
   width: min(620px, 96vw);
-  background: #fff;
+  background: var(--color-bg-card, #fff);
   border-radius: 12px;
-  border: 1px solid #bad0e7;
+  border: 1px solid var(--color-border-dark, #bad0e7);
   overflow: hidden;
 }
 
 .modal-title {
-  background: #1d4ed8;
-  color: #fff;
+  background: var(--color-primary-dark, #1d4ed8);
+  color: var(--color-bg-card, #fff);
   padding: 0.55rem 0.8rem;
   font-weight: 700;
 }

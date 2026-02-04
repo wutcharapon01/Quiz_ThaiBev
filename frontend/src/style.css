@@ -1,5 +1,52 @@
 ﻿:root {
-  color: #12202f;
+  /* Primary colors */
+  --color-primary: #1273de;
+  --color-primary-dark: #0d5eb3;
+  --color-primary-light: #3b82f6;
+  
+  /* Secondary / Accent */
+  --color-accent: #0ea5a4;
+  --color-accent-dark: #0d8a89;
+  
+  /* Text colors */
+  --color-text: #12202f;
+  --color-text-secondary: #1f3c59;
+  --color-text-muted: #64748b;
+  --color-text-light: #325170;
+  
+  /* Background colors */
+  --color-bg: #f8fbff;
+  --color-bg-light: #f0f7ff;
+  --color-bg-card: #ffffff;
+  --color-bg-card-translucent: rgba(255, 255, 255, 0.87);
+  --color-bg-hover: #edf5ff;
+  
+  /* Border colors */
+  --color-border: #dbe8f7;
+  --color-border-light: #c6d7eb;
+  --color-border-dark: #b7cde3;
+  
+  /* Feedback colors */
+  --color-success: #16a34a;
+  --color-success-dark: #15803d;
+  --color-success-light: #10b981;
+  
+  --color-error: #dc2626;
+  --color-error-dark: #b91c1c;
+  
+  --color-warning: #f59e0b;
+  --color-warning-dark: #d97706;
+  
+  /* Shadow */
+  --shadow-card: 0 10px 24px rgba(16, 44, 75, 0.07);
+  --shadow-panel: 0 12px 26px rgba(16, 44, 75, 0.08);
+  
+  /* Gradient backgrounds */
+  --gradient-bg: radial-gradient(circle at 10% 20%, var(--color-bg-light), var(--color-bg) 55%, var(--color-bg-hover));
+  --gradient-success: linear-gradient(120deg, var(--color-success), var(--color-accent));
+  
+  /* Default text color */
+  color: var(--color-text);
 }
 
 * {

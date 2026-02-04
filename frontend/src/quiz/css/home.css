@@ -5,7 +5,7 @@
 
 .hero-block p {
   margin: 0.6rem 0 1.5rem;
-  color: #2f4a67;
+  color: var(--color-text-light, #2f4a67);
 }
 
 .question-grid {
@@ -15,11 +15,11 @@
 }
 
 .question-card {
-  background: #ffffffde;
-  border: 1px solid #dbe8f7;
+  background: var(--color-bg-card-translucent, rgba(255, 255, 255, 0.87));
+  border: 1px solid var(--color-border, #dbe8f7);
   border-radius: 14px;
   padding: 1rem;
-  box-shadow: 0 10px 24px #102c4b12;
+  box-shadow: var(--shadow-card, 0 10px 24px rgba(16, 44, 75, 0.07));
 }
 
 .question-card h2 {
@@ -28,11 +28,11 @@
 }
 
 .question-card p {
-  color: #325170;
+  color: var(--color-text-light, #325170);
 }
 
 .question-number {
   margin: 0;
-  color: #1273de;
+  color: var(--color-primary, #1273de);
   font-weight: 700;
 }
